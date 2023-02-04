@@ -7,6 +7,8 @@ camera.resolution = (1920, 1080)
 camera.vflip = True
 camera.contrast = 10
 
-file_name = "/home/pi/Desktop/EntropEYE-Camera/fotocapture/img_" + str(time.time()) + ".jpg"
-camera.capture(file_name)
+ timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    picture_filename = "/home/pi/Desktop/EntropEYE-Camera/fotocapture/picture_{}.jpg".format(timestamp)
+
+camera.capture(picture_filename)
 print("Done.")
